@@ -1,0 +1,547 @@
+ Plot()
+ {
+  // Outlier models
+  Outlier_Model("General", T(5), U(0,4), "t");
+  Outlier_Model("Charcoal", Exp(1, -10,0), U(0,3), "t");
+  Outlier_Model("Cremation", Exp(0.9,-10,-0.1), U(1,3),"t");
+  //CW burials in same area as Pitted Ware
+  Sequence("CW")
+  {
+   Boundary("Start_CW")
+   {
+    Start("Start_CW_S");
+    Transition("Start_CW_T");
+    End("Start_CW_E");
+   };
+   Phase("CW radiocarbon dates")
+   {
+    KDE_Plot("CW")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("Ua-37494",3990,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Beta-423305",4020,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("UBA-39934",3987,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-39287",3955,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-5361",3730,50)
+    {
+     Outlier("General", 0.5);
+    };
+    R_Date("Lu-474",3930,80)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-19468",3890,55)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-19469",4080,65)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-37496",4135,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-33978",3755,35)
+    {
+     Outlier("General", 0.5);
+    };
+    R_Date("Ua-37497",4075,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-36982",3975,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",4031,27)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End_CW")
+   {
+    Start("End_CW_S");
+    Transition("End_CW_T");
+    End("End_CW_E");
+   };
+  };
+  //Pitted Ware
+  Sequence("PW")
+  {
+   Boundary("Start_PW")
+   {
+    Start("Start_PW_S");
+    Transition("Start_PW_T");
+    End("Start_PW_E");
+   };
+   Phase("PW radiocarbon dates")
+   {
+    KDE_Plot("PW")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("Ua-65844",4088,30)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-77052",4284,30)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-67696",4287,62)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-77053",4344,29)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-77051",4281,30)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-77047",4264,30)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-77049",3949,29)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-63189",4089,30)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-63190",3913,33)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-77050",4277,45)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-77046",4047,65)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ua-32323",4365,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-10687",4275,65)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-11465",4375,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-10688",3825,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-18447",4590,40)
+    {
+     Outlier("General", 0.5);
+    };
+    R_Date("Ua-10429",4150,65)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-17280",4210,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-42928",4046,39)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-41107",3992,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-19927",4105,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-32324",4275,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-19832",4140,55)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("LuS-8676",3810,50)
+    {
+     Outlier("General", 0.2);
+    };
+    R_Date("Ua-10430",4195,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-10738",4302,85)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-17279",4285,80)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-41108",3992,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-48708",4020,43)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-48709",4002,38)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-65849",4133,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-65854",4408,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-41786",3960,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-41787",4305,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-41788",4253,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-41789",4373,36)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-41790",4429,36)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-41791",3765,36)
+    {
+     Outlier("General", 0.6);
+    };
+    R_Date("Ua-41792",4023,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-19831",4035,55)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-32325",4145,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-65843",3996,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-51520",4274,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-51521",4123,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Beta-353394",3940,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-18293",4700,40)
+    {
+     Outlier("General", 1);
+    };
+    R_Date("Poz-18291",4350,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-10739",4355,85)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-4476",4015,80)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-4775",3880,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-11407",4010,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-11408",4095,75)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-57011",3996,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-63187",3990,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-17021",4380,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-27691",4580,40)
+    {
+     Outlier("General", 0.5);
+    };
+    R_Date("Ua-27692",4525,40)
+    {
+     Outlier("General", 0.4);
+    };
+    R_Date("Ua-77788",4094,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-15881",4375,75)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-15880",4340,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-15879",4305,75)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-19513",3970,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-23508",4035,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-51518",4399,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-51519",4309,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-54405",4211,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-54406",4361,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-54407",4400,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-52465",3997,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-52466",4065,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-52468",4026,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-52469",3989,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-55114",4091,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56212",4058,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56213",4044,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56214",4043,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56215",4110,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56216",3991,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56218",4022,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56219",3947,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56220",4083,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56221",4104,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56222",4085,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56223",4065,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56224",4022,21)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-56225",3885,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-53765",4424,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-53761",4102,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-35045",4145,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-51522",4392,36)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-51523",4363,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-51524",4220,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-51525",4292,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-53760",4167,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-53762",4139,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-55113",4113,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-55116",4009,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-55117",3891,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-55118",4129,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-55115",4171,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Beta-353396",4250,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-51526",4355,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-53759",4082,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-63184",4074,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-63186",3915,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-63188",3918,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ua-65842",3805,31)
+    {
+     Outlier("General", 0.3);
+    };
+   };
+   Boundary("End_PW")
+   {
+    Start("End_PW_S");
+    Transition("End_PW_T");
+    End("End_PW_E");
+   };
+  };
+  Order("Groups overlap")
+  {
+   End_CW( );
+   Start_CW( );
+   End_PW( );
+   Start_PW( );
+  };
+  Difference("Overlap PW_CW", "Start_CW", "End_PW");
+  Difference("Max overlap PW_CW", "Start_CW_E", "End_PW_S");
+  Difference("Min overlap PW_CW", "Start_CW_S", "End_PW_E");
+ };
