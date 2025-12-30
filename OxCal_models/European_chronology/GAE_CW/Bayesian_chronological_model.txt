@@ -1,0 +1,206 @@
+ Plot()
+ {
+  // Outlier models
+  Outlier_Model("General", T(5), U(0,4), "t");
+  Outlier_Model("Charcoal", Exp(1, -10,0), U(0,3), "t");
+  Outlier_Model("Cremation", Exp(0.9,-10,-0.1), U(1,3),"t");
+  //CW burials in the same area as eastern
+  //Globular Amphora
+  Sequence("CW")
+  {
+   Boundary("Start_CW")
+   {
+    Start("Start_CW_S");
+    Transition("Start_CW_T");
+    End("Start_CW_E");
+   };
+   Phase("CW radiocarbon dates")
+   {
+    KDE_Plot("CW")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("Ki-6889",3995,55)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-25614",4045,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-134518",4005,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90898",3865,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-134519",4075,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-25616",3940,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-6894",4020,55)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",3981,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-134515",3975,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-134516",3910,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-8955",3845,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-8952",3850,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-9450",3915,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-9587",4145,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90760",3925,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90896",3825,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90897",3865,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90899",3875,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-73135",4045,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("Poz-91069",3790,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+   };
+   Boundary("End_CW")
+   {
+    Start("End_CW_S");
+    Transition("End_CW_T");
+    End("End_CW_E");
+   };
+  };
+  //Eastern Globular Amphora
+  Sequence("eastern GA")
+  {
+   Boundary("Start_GAE")
+   {
+    Start("Start_GAE_S");
+    Transition("Start_GAE_T");
+    End("Start_GAE_E");
+   };
+   Phase("GAE radiocarbon dates")
+   {
+    KDE_Plot("GAE")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("Ki-10654",4320,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-10651",4370,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5009",4040,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Gd-9249",4080,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5006",4150,55)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5919",4150,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-10653",4140,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-6930",3935,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5008",4220,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-62452",4100,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Combine("Ivanye")
+    {
+     R_Date("Le-5021",4090,70);
+     R_Date("Ki-5141",4030,50);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Khartoniv")
+    {
+     R_Date("Ki-5586",4130,70);
+     R_Date("Ki-5587",4060,60);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Tovpyzhy")
+    {
+     R_Date("Ki-5011",4310,45);
+     R_Date("Ki-5010",4270,50);
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End_GAE")
+   {
+    Start("End_GAE_S");
+    Transition("End_GAE_T");
+    End("End_GAE_E");
+   };
+  };
+  Order("Groups overlap")
+  {
+   End_CW( );
+   Start_CW( );
+   End_GAE( );
+   Start_GAE( );
+  };
+  Difference("Overlap GAE_CW", "Start_CW", "End_GAE");
+  Difference("Max overlap GAE_CW", "Start_CW_E", "End_GAE_S");
+  Difference("Min overlap GAE_CW", "Start_CW_S", "End_GAE_E");
+ };
