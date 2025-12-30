@@ -1,0 +1,443 @@
+ Plot()
+ {
+  // Outlier models
+  Outlier_Model("General", T(5), U(0,4), "t");
+  Outlier_Model("Charcoal", Exp(1, -10,0), U(0,3), "t");
+  Outlier_Model("Cremation", Exp(0.9,-10,-0.1), U(1,3),"t");
+  //CW in the same areas as Central Globular 
+  //Amphora
+  Sequence("CW sequence")
+  {
+   Boundary("Start_CW")
+   {
+    Start("Start_CW_S");
+    Transition("Start_CW_T");
+    End("Start_CW_E");
+   };
+   Phase("CW radiocarbon dates")
+   {
+    KDE_Plot("CW")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("Poz-74635",4025,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-75446",4000,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",3877,23)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-6881",3865,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-16596",3830,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",4163,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-33427",4140,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-26755",4086,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-85608",3775,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-36250",4160,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-77329",3950,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Gd-1684",3840,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-20655",3730,70)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Ki-6242",3940,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",4148,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-89314",4005,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5717",3775,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-X-2417-15",4187,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-25936",4080,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-20926",3960,40)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End_CW")
+   {
+    Start("End_CW_S");
+    Transition("End_CW_T");
+    End("End_CW_E");
+   };
+  };
+  //Central Globular Amphora
+  Sequence("GAC sequence")
+  {
+   Boundary("Start_GAC")
+   {
+    Start("Start_GAC_S");
+    Transition("Start_GAC_T");
+    End("Start_GAC_E");
+   };
+   Phase("GAC radiocarbon dates")
+   {
+    KDE_Plot("GAC")
+    {
+    };
+    Sum()
+    {
+    };
+    Combine("Koszyce 3")
+    {
+     R_Date("AAR-28702",4208,35);
+     R_Date("AAR-28703",4187,36);
+     R_Date("AAR-28704",4230,36);
+     R_Date("AAR-26315",4239,33);
+     R_Date("AAR-28705",4202,36);
+     R_Date("AAR-28706",4220,34);
+     R_Date("AAR-26318",4204,44);
+     R_Date("AAR-28707",4215,35);
+     R_Date("AAR-28708",4211,40);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Kuczkowo 1")
+    {
+     R_Date("Ki-6917",4415,45);
+     R_Date("Ki-6926",4370,50);
+     R_Date("Ki-6927",4420,55);
+     R_Date("Ki-6928",4385,45);
+     R_Date("Ki-6929",4400,50);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Malice 1, Ind. A")
+    {
+     R_Date("Poz-94494",4165,35);
+     R_Date("Poz-94495",4060,35);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Malice 1, Ind. B")
+    {
+     R_Date("Poz-94496",4215,35);
+     R_Date("Poz-94497",4225,35);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Malice 1, Ind. C")
+    {
+     R_Date("Poz-94499",4130,35);
+     R_Date("Poz-94500",4115,35);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Malice 1, Ind. D")
+    {
+     R_Date("Poz-94501",4090,35);
+     R_Date("Poz-94502",4120,30);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Opatowice 1/38")
+    {
+     R_Date("Gd-8035",3900,60);
+     R_Date("Gd-8036",3820,60);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Opatowice 36/101A")
+    {
+     R_Date("Gd-8037",3850,50);
+     R_Date("Ki-5137",3920,60);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Opatowice 36/123")
+    {
+     R_Date("Gd-6522",4350,120);
+     R_Date("Poz-57540",4210,35);
+     R_Date("Ki-5136",4180,70);
+     Outlier("General", 0.05);
+    };
+    R_Combine("Sandomierz 78")
+    {
+     R_Date("AAR-?",4222,23);
+     R_Date("Poz-90784",4155,35);
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-6914",4305,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-6909",4340,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-7831",4035,90)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-7830",4020,90)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-61739",3995,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-7829",3940,85)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-23438",4136,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90800",4100,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90802",4090,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90804",4140,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90806",4200,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90807",4180,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-30072",4221,22)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-30073",4192,22)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-30074",4225,22)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-61735",4235,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-21911",4300,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-21912",4105,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5841",4120,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-14022",4330,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-6508",3990,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-6509",3910,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-61732",4180,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5434",4010,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-58148",4110,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-44433",4310,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-44431",4440,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-44430",4370,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-44432",4320,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-44485",4100,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-94493",4135,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-94503",4040,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90808",4140,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90809",4180,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90810",4120,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Gd-4117",4230,110)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5595",3950,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Gd-6438",4010,100)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-61733",4230,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-6513",4105,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-61734",4040,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-58109",4335,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-102997",4075,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-102996",4125,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-111913",3995,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-130232",4080,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-111914",4185,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-23437",4115,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90821",4160,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-20927",3950,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-90785",4190,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-61738",4045,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5910",4350,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5952",4150,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-5433",4170,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-58111",4170,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Ki-6221",4030,60)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End_GAC")
+   {
+    Start("End_GAC_S");
+    Transition("End_GAC_T");
+    End("End_GAC_E");
+   };
+  };
+  Order("Groups overlap")
+  {
+  };
+  Difference("Overlap GAC_CW", "Start_CW", "End_GAC");
+  Difference("Max overlap GAC_CW", "Start_CW_E", "End_GAC_S");
+  Difference("Min overlap GAC_CW", "Start_CW_S", "End_GAC_E");
+ };
