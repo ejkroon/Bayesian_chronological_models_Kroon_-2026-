@@ -1,0 +1,1143 @@
+ Plot()
+ {
+  // Outlier models
+  Outlier_Model("General", T(5), U(0,4), "t");
+  Outlier_Model("Charcoal", Exp(1, -10,0), U(0,3), "t");
+  Outlier_Model("Cremation", Exp(0.9,-10,-0.1), U(1,3),"t");
+  // Model with independent sequences for VL, FBW, CW, and BB
+  Sequence("BB")
+  {
+   Boundary("Start_BB")
+   {
+    Start("Start_BB_S");
+    Transition("Start_BB_T");
+    End("Start_BB_E");
+   };
+   Phase("BB radiocarbon dates")
+   {
+    KDE_Plot("BB")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("GrN-5131",3665,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("PSUAMS-7847",3700,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-28356",3765,35)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-13617",3910,50)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("R-combine",3931,32)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14067",3830,35)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14066",3840,35)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14840",3850,40)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-13602",3880,50)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-11264",3840,50)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("SUERC-26372",3840,35)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrN-6340",3760,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-6711",3735,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-6856",3835,55)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-6146",3725,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrA-41636",3875,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-39655",3830,30)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End_BB")
+   {
+    Start("End_BB_S");
+    Transition("End_BB_T");
+    End("End_BB_E");
+   };
+  };
+  Sequence("CW")
+  {
+   Boundary("Start_CW")
+   {
+    Start("Start_CW_S");
+    Transition("Start_CW_T");
+    End("Start_CW_E");
+   };
+   Phase("CW radiocarbon dates")
+   {
+    KDE_Plot("CW")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("UtC-1945",4040,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("UtC-1949",3910,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("SUERC-26360",4055,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-56014",4100,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-56013",4030,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-12299",3920,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-14965",4065,45)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrN-851",4140,70)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-1855",4420,55)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11918",4165,30)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-7518",4170,45)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-6129",4165,55)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-6368",3935,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-6349",3945,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrA-41646",4075,30)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-6126",3970,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-8247",4040,90)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-6724",4210,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+   };
+   Boundary("End_CW")
+   {
+    Start("End_CW_S");
+    Transition("End_CW_T");
+    End("End_CW_E");
+   };
+  };
+  Sequence("FBW")
+  {
+   Boundary("Start_LFG")
+   {
+    Start("Start_LFG_S");
+    Transition("Start_LFG_T");
+    End("Start_LFG_E");
+   };
+   Phase("LFG radiocarbon dates")
+   {
+    KDE_Plot("LFG")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("Poz-68248",4330,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-68249",4220,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-13599",4130,50)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-13600",4160,50)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("R-combine",4150,35)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-13705",4200,50)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-13706",4170,50)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-13958",4220,50)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14086",4170,40)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14088",4270,40)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14089",4190,35)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14090",4140,40)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14095",4235,40)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14168",4170,40)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-14973",4275,45)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-15459",4290,60)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-15642",4390,60)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("Poz-88040",4205,35)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrN-16040",4550,60)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrA-16021",4230,30)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrM-26730",4387,27)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrN-6156",4380,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-4201",4380,75)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-5767",4315,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrA-41638",4260,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-41639",4230,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KlA-23204",4348,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KlA-23207",4331,29)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End_FBW")
+   {
+    Start("End_FBW_S");
+    Transition("End_FBW_T");
+    End("End_FBW_E");
+   };
+  };
+  Sequence("EFG")
+  {
+   Boundary("Start_FBW")
+   {
+    Start("Start_FBW_S");
+    Transition("Start_FBW_T");
+    End("Start_FBW_E");
+   };
+   Phase("EFG radiocarbon dates")
+   {
+    KDE_Plot("EFG")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("Poz-71757",4460,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Beta-421914",4400,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-39456",4485,30)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-16492",4700,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-12262",4920,70)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-12263",4490,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-16494",4680,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11763",4980,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11764",4400,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11765",4890,80)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11766",4480,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-18785",4460,80)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-9209",4520,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-5103",4355,45)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-1824C",4410,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-2221",4550,80)
+    {
+     Outlier("Charcoal", 1);
+    };
+   };
+   Boundary("End_EFG")
+   {
+    Start("End_EFG_S");
+    Transition("End_EFG_T");
+    End("End_EFG_E");
+   };
+  };
+  Sequence("VL")
+  {
+   Boundary("Start_VL")
+   {
+    Start("Start_VL_S");
+    Transition("Start_VL_T");
+    End("Start_VL_E");
+   };
+   Phase("VL radiocarbon dates")
+   {
+    KDE_Plot("VL")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("GrM-16481",4195,30)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrN-4948",4130,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-18678",4300,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-16185",4570,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-684",4080,85)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57574",4105,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrM-17955",4115,25)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrA-57565",3995,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11845",4125,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11846",4040,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11847",4080,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11848",4180,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-11850",4135,30)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-14171",4010,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-14237",4180,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-2221",4000,65)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-2303",4330,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-2480",4190,70)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-254",4200,120)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-25915",4020,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-4906",4090,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-4907",4080,70)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-4908",3980,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-5028",3810,60)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-5301",4060,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-8232",3965,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-8233",4000,25)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-8234",4505,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-9132",4015,30)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-9133",4010,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-9134",4535,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-9135",4435,50)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-9136",4445,35)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-9137",4450,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrA-118",4220,30)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("UtC-1933",4360,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57514",4415,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57514",4285,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57512",4270,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57739",4260,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-17961",4110,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-41736",4060,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-41751",4160,5)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-41760",3865,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("SUERC-26368",4130,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57522",4245,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57566",4305,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57553",4110,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57554",4115,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57563",4035,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57526",4060,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-46023",4140,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-21343",4450,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("SUERC-26369",4100,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("SUERC-26370",4130,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("SUERC-26371",4165,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57561",4150,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57555",4135,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-57557",3840,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("SUERC-26356",4100,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-9190",4400,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-11851",4110,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-8235",4535,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-2304",4250,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-2487",4280,100)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End_VL")
+   {
+    Start("End_VL_S");
+    Transition("End_VL_T");
+    End("End_VL_E");
+   };
+  };
+  Sequence("SW")
+  {
+   Boundary("Start_SW")
+   {
+    Start("Start_SW_S");
+    Transition("Start_SW_T");
+    End("Start_SW_E");
+   };
+   Phase("SW radiocarbon dates")
+   {
+    KDE_Plot("SW")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("GrA-35308",5290,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-34814",5245,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-22781",5569,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-23702",5500,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-22775",5514,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-25038",5530,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-25045",5841,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-25036",6017,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-23704",6550,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-25035",6492,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-25033",6502,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-26626",6167,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-23741",5889,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-22851",6319,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-22778",6425,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-25040",6126,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-25043",6198,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-22776",6019,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-22770",6483,22)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-22772",6298,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-22774",6420,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-22769",6473,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-26625",6080,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-25044",5905,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-26624",6047,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-25037",6223,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-64342",5380,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-62951",5610,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-26465",5425,30)
+    {
+     Outlier("Cremation", 1);
+    };
+    R_Date("GrN-14122",5035,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-6215",5320,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-8240",5330,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-8241",5385,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-26215",4850,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-26214",4980,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-26216",4740,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-26217",4710,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-26218",4560,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-26219",4480,70)
+    {
+     Outlier("General",0.2);
+    };
+    R_Date("GrA-38187",5340,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-38188",5230,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-38189",5340,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-9802",6050,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15608",5267,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15612",5269,37)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15610",5278,36)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15609",5334,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("OxA-15611",5358,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-27308",5247,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-27306",5272,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-27300",5213,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-27298",5300,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-27307",5235,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-27310",5329,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-27304",5326,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-27305",5297,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-29664",5321,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-29665",5327,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-29661",5332,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-29659",5306,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-29667",5307,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28799",5348,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28292",5348,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28293",5349,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28833",5330,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28294",5317,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28800",5380,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28801",5387,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28802",5366,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28295",5338,16)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28831",5365,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrM-28832",5350,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-9799",6540,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-30447",5390,70)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-33953",5010,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-33954",5350,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-13278",5730,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-13296",6050,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-10950",5430,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-17997",5550,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-13275",6420,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-17987",5570,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-15034",6010,55)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-13272",5900,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-9798",6320,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-21376",5820,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrA-9803",6380,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-8817",5205,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-8812",5255,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("UtC-5710",5742,47)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("UtC-5711",5714,49)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("UtC-5712",5729,46)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("UtC-5713",5361,48)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("UtC-5714",5346,49)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-8816",5340,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-8815",5340,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-8814",5320,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-19331",5160,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-7764",5415,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-9897",5335,45)
+    {
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End_SW")
+   {
+    Start("End_SW_S");
+    Transition("End_SW_T");
+    End("End_SW_E");
+   };
+  };
+  Order()
+  {
+  };
+  Difference("Overlap CW_BB", "Start_BB", "End_CW");
+  Difference("Max overlap CW_BB", "Start_BB_E", "End_CW_S");
+  Difference("Min overlap CW_BB", "Start_BB_S", "End_CW_E");
+  Difference("Overlap FBW_CW", "Start_CW", "End_FBW");
+  Difference("Max overlap FBW_CW", "Start_CW_E", "End_FBW_S");
+  Difference("Min overlap FBW_CW", "Start_CW_S", "End_FBW_E");
+  Difference("Overlap VL_CW", "Start_CW", "End_VL");
+  Difference("Max overlap VL_CW", "Start_CW_E", "End_VL_S");
+  Difference("Min overlap VL_CW", "Start_CW_S", "End_VL_E");
+  Difference("Overlap SW_FBW", "Start_FBW", "End_SW");
+  Difference("Max overlap SW_FBW", "Start_FBW_E", "End_SW_S");
+  Difference("Min overlap SW_FBW", "Start_FBW_S", "End_SW_E");
+ };
