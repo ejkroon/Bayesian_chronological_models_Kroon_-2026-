@@ -1,0 +1,838 @@
+ Plot()
+ {
+  // Outlier models
+  Outlier_Model("General", T(5), U(0,4), "t");
+  Outlier_Model("Charcoal", Exp(1, -10,0), U(0,3), "t");
+  Outlier_Model("Cremation", Exp(0.9,-10,-0.1), U(1,3),"t");
+  //CW burials in the same area as
+  //western Globular Amphora
+  Sequence("CW sequence")
+  {
+   Boundary("Start_CW")
+   {
+    Start("Start_CW_S");
+    Transition("Start_CW_T");
+    End("Start_CW_E");
+   };
+   Phase("CW radiocarbon dates")
+   {
+    KDE_Plot("CW")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("BETA-487621",4100,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-4726",3938,59)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-4727",3528,56)
+    {
+     Outlier("General",1);
+    };
+    R_Date("DeA-36656",3979,22)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("CRL-19317",3989,44)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("BRAMS-2959",4016,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34709",4035,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34711",4090,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-30751",3896,22)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-14924",3720,40)
+    {
+     Outlier("General",1);
+    };
+    R_Date("DeA-35010",4035,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("DeA-16085",3919,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("DeA-16086",4067,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-98508",3850,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34732",3910,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34733",3955,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-52820",3988,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-52833",3771,23)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34693",4075,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34695",3965,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34696",4055,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34700",3965,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34701",4050,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34702",4025,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34703",4000,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34704",4045,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-14919",3890,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-4680",3643,49)
+    {
+     Outlier("General",1);
+    };
+    R_Date("KIA-34706",4235,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34705",4000,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34708",3900,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("DeA-19323",3920,38)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("DeA-35009",3951,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("DeA-26662",4043,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-48835",4003,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",4016,19)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("DeA-33257",4004,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-41377",3917,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-41378",3853,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-38481",4055,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-45787",4147,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-45789",4130,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-45788",3947,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-30795",4259,23)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-38483",4048,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-86648",4110,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",4250,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("CRL-17484",3981,22)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-44709",3987,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-41374",4017,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-41375",3898,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("PSUAMS-3888",3885,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("PSUAMS-4026",3850,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-45791",4081,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("PSUAMS-3887",3935,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-9376",4015,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-11798",3854,39)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-45792",4177,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-45793",4314,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-45794",4093,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-45796",4105,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-44710",4127,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-9481",3935,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-9379",3940,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("GrN-9482",3860,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-38472",4027,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("CRL-9192",4226,95)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("CRL-9198",4247,80)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-38473",3913,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-38474",3902,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("CRL-9200",4256,82)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-46362",3918,21)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-30760",3941,21)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("CRL-9203",4241,84)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-30758",4196,21)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-45798",4171,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-30759",4212,21)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",4166,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("CRL-9182",4261,118)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",4067,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-30761",3966,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4139",3960,85)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KN-4886",3728,48)
+    {
+     Outlier("General",1);
+    };
+    R_Date("KI-4140",4040,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4141",3939,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-40715",3955,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-40716",4015,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-40717",3965,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KN-4889",3648,52)
+    {
+     Outlier("General",1);
+    };
+    R_Date("KN-4890",3700,60)
+    {
+     Outlier("General",1);
+    };
+    R_Date("KN-4887",3868,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KN-4888",3789,59)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-162",4080,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KN-4891",3875,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-7807",4032,56)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-41736",4203,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KN-4892",3834,39)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Hd-18963",3830,18)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KN-4866",3991,54)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4143",4040,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4142/KIA-2689",3890,95)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4144",4060,95)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4145",3840,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-21488",4000,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-21487",3927,37)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-7779",3967,57)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34261",4113,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-29118",4009,32)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-29116",4078,31)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-27878",3969,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-34264",4078,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-27852",4053,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-27850",4073,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-26664",4027,34)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-23647",4056,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-14075",3878,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4146",3760,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4147",3920,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KN-4893",3876,52)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-10901",4216,49)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-10966",4239,59)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-38983",4115,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-38984",4305,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-39548",4073,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-39552",4095,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-39553",4006,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-39549",4163,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-39550",3829,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-39547",3987,38)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-29551",4127,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4150",3770,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4149/KIA-2968",3760,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4148",3740,55)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Hd-19048",3942,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("HD-19634",4024,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-32304",4135,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-17173",4027,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-111739",4017,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-111747",4022,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-111771",4070,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-111775",3988,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-17087",4006,28)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-17070",4032,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-17181",4034,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-17071",4033,19)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-17073",3989,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-17064",3999,20)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-17270",3879,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-18152",4047,19)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-21691",4021,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-17082",4015,23)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4153",3890,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-19530",4096,18)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-7042",3792,50)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-8629",3926,57)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4154",3800,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4155",3890,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4156",3850,35)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4157",3930,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4158",3960,40)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-4195",4013,56)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-4193",3690,65)
+    {
+     Outlier("General",1);
+    };
+    R_Date("KIA-38725",4095,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-38724",4100,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KI-4151",3910,45)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-21675",4064,29)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",3994,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("R-combine",4028,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-34184",3951,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-34183",3986,26)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("MAMS-34182",3988,27)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Hv-22262",4185,55)
+    {
+     Outlier("General", 1);
+    };
+    R_Date("Hv-22263",4105,60)
+    {
+     Outlier("General", 1);
+    };
+    R_Date("Hv-22264",4160,55)
+    {
+     Outlier("General", 1);
+    };
+    R_Date("GrN-7518",4170,45)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("KIA-40269",4225,30)
+    {
+     Outlier("Charcoal", 1);
+    };
+    R_Date("GrN-8008",4215,40)
+    {
+     Outlier("Charcoal", 1);
+    };
+   };
+   Boundary("End_CW")
+   {
+    Start("End_CW_S");
+    Transition("End_CW_T");
+    End("End_CW_E");
+   };
+  };
+  //western Globular Amphora
+  Sequence("GAW")
+  {
+   Boundary("Start_GAW")
+   {
+    Start("Start_GAW_S");
+    Transition("Start_GAW_T");
+    End("Start_GAW_E");
+   };
+   Phase("GAW radiocarbon dates")
+   {
+    KDE_Plot("GAW")
+    {
+    };
+    Sum()
+    {
+    };
+    R_Date("KN-4894",4071,41)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KN-4895",4112,54)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KN-4896",4219,54)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Bln-1346",4185,60)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-354",4150,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Bln-4709",4100,41)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-41789",4374,33)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-23660",4158,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Erl-8208",4286,62)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-39689",4109,24)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("KIA-39689",4188,25)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Date("Poz-109010",4215,30)
+    {
+     Outlier("General", 0.05);
+    };
+    R_Combine("Osterburg-Düsedau")
+    {
+     R_Date("KIA-41788",4560,37);
+     R_Date("KIA-41788A",4522,39);
+     Outlier("General",1);
+    };
+    Combine("Zauschwitz")
+    {
+     R_Date("KIA-39688",4120,26);
+     R_Date("KIA-39687",4185,26);
+     Outlier("General", 0.05);
+    };
+    Combine("Zelchow 26")
+    {
+     R_Date("Poz-109011",4370,40);
+     R_Date("Poz-109008",4395,35);
+     Outlier("General", 0.05);
+    };
+   };
+   Boundary("End_GAW")
+   {
+    Start("End_GAW_S");
+    Transition("End_GAW_T");
+    End("End_GAW_E");
+   };
+  };
+  Order()
+  {
+  };
+  Difference("Overlap GAW_CW", "Start_CW", "End_GAW");
+  Difference("Max overlap GAW_CW", "Start_CW_E", "End_GAW_S");
+  Difference("Min overlap GAW_CW", "Start_CW_S", "End_GAW_E");
+ };
