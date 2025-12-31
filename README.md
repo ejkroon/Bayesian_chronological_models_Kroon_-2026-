@@ -176,7 +176,67 @@ and migrant groups is likely through the Order() query. The duration of
 this overlap (or gap) is then calculated with the Difference() query.
 
 ## Notes about model outputs
+In this section, a number of outliers flagged by OxCal in the Bayesian 
+chronological models are discussed.
 
+### Dutch chronology
+- GrN-16040 (4550±60BP, A=20.4%) from a cremation burial in Haidberg-
+  Schöppingen. Attributed to LFG. The calibrated range of this 
+  date is relatively old compared to the modelled age. Possibly an
+  early outlier for cremation burials.
+- GrN-5028 (3810±60BP; A=59.1%) was performed on charcoal from a VL 
+  settlement at Leidschendam. Lanting and Van der Plicht (2000, 71) 
+  report possible contamination for this date. The date is relatively 
+  young compared to its modelled age.
+- GrN-26219 (4880±70BP; A=56%) is also relatively young relative 
+  compared to its modelled age. This date was performed on peat remnants 
+  deemed to be contemporary with a SW settlement. Natural processes 
+  during peat growth may explain the outlier (cf. Quik _et al._ 2022).
+
+### European chronology
+#### PW-CW
+-  Ua-19468 (3890±55BP; A=50.4%) stands out as young compared to its 
+   modelled age. This date was performed on human bone from a CW burial,
+   but no information was reported to exclude potential reservoir 
+   effects.
+-  Ua-37496 (4135±45; A=33%) which is old compared to its modelled age. 
+   This date too was performed on human bone from a CW burial, but no 
+   contextual information was available to evaluate whether reservoir 
+   effects play a role.
+-  LuS-8676 (3810±50BP; A=41.7%) is young compared to its modelled age. 
+   This date stems from animal bone (Sus sp.) from a PW settlement 
+   context. No information was reported which could explain this 
+   mismatch.
+-  Ua-65842 (3805±31BP; A=46.1%) is too young compared to its modelled 
+   age. The date stems from a cereal found in a PW settlement context. 
+   The seed may have been a younger intrusion.
+
+#### GAW-CW
+This model flags 5 dates performed on human bone from CW burials as 
+outliers. These dates are all relatively young compared to their 
+modelled age, and 4 appear to form a series from the same laboratory. 
+-  MAMS-52833 (3771±23BP; A=56.3%)
+-  Kl-4146 (3760±45BP; A=47.6%)
+-  Kl-4150 (3770±50BP; A=52.4%)
+-  Kl-4149/KlA-2968 (3760±30BP; A=46.8%)
+-  Kl-4148 (3740±55BP; A=35%)
+
+#### GAC-CW
+-  The X2-test in the R_Combine() for Malice 1, feature 32, Individual 
+   A fails and returns df=1, T=4.5. The burial contains multiple 
+   individuals which differ considerably (ca. 200y BP in some cases) in 
+   terms of radiocarbon age. Perhaps a sample misattribution.
+-  Poz-44431 (4440±40BP; A=59.6%). The modelled age is relatively young 
+   compared to the unmodelled age, causing the mismatch. This date was 
+   performed on a human bone from a GA burial context, but no 
+   information was reported which enables evaluation of potential 
+   reservoir effects.
+
+#### GAE-CW
+-  Poz-9587 (4145±35BP; A=33.4%) has a modelled age which is young 
+   compared to its calibrated age. The date was performed on a human 
+   bone from a CW burial, but no information was reported which enables 
+   evaluation of potential reservoir effects.
 
 ## How to cite
 Please cite the main publication: Kroon, E.J., (in prep.). New Approach 
@@ -237,6 +297,10 @@ and Bayesian chronological modelling demonstrate interactions between
 migrating and indigenous communities in the Netherlands 5,000 years ago.
 DOI: [10.17026/AR/3SKXTB](https://doi.org/10.17026/AR/3SKXTB).
 
+Lanting, J.N., and Van der Plicht, J., 2000. De 14C-chronologie van de 
+Nederlandse pre- en protohistorie, III: Neolithicum. _Palaeohistoria_ 
+41/42, 1-110.
+
 Lee, S., Bronk Ramsey, C. 2012. Development and application of the 
 trapezoidal model for archaeological chronologies. _Radiocarbon_ 54(1): 
 107-122. DOI: [10.2458/azu_js_rc.v54i1.12397](https://doi.org/10.2458/azu_js_rc.v54i1.12397).
@@ -252,6 +316,12 @@ Funnelbeaker: A Bayesian Chronological Model. _Open Archaeology_ 7(1),
 Müller, J., 2023. _Separation, hybridisation, and networks: Globular_ 
 _Amphora sedentary pastoralists ca. 3200-2700 BCE_. Leiden: Sidestone 
 Press. DOI: [10.59641/a0e4613c](https://doi.org/10.59641/a0e4613c).
+
+Quik, C., Palstra, S.W., Ban Beek, R., Van der Velde, Y., Candel, J.H.
+J., Van der Linden, M., Kubiak-Martens, L., Swindles, G.T., Makasake, 
+B., Wallinga, J., 2022. Dating basal peat: The geochronology of peat 
+initiation revisited. _Quaternary Geology_ 72, 101278. DOI:
+[10.1016/j.quageo.2022.101278](https://doi.org/10.1016/j.quageo.2022.101278).
 
 Reimer, P.J., Austin, W.E.N., Bard, E., Bayliss, A., Blackwell, P.G., 
 Bronk Ramsey, C., Butzinm M., Cheng, H., Edwards, R.L., Friedrich, M., 
