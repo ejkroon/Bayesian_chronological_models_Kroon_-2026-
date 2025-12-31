@@ -66,7 +66,7 @@ Table 1) and Lindström (2024, Appendix 2) for PW.
 A breakdown of the radiocarbon dates by sample material is shown in 
 Suppl. Fig. 1.
 
-![Supplementary Figure 1](C:\Users\Erik_\Documents\GitHub\overview_table.jpg)
+![Supplementary Figure 1](overview_table.jpg)
 
 
 
