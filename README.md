@@ -26,7 +26,7 @@ __OxCal_models
  |   |_PW_CW
  |___raw_data
     |_radiocarbon_dates.csv
-    |_bibliography_C14s
+    |_bibliography_radiocarbon_dates
 ```
 
 The Bayesian chronological models and their output are ordered by the 
@@ -46,8 +46,8 @@ The files in the folders contain the following information:
 - [name]_visual_output.pdf: a visual rendering of the model output. 
   These visualisations show the agreement (Amodel) and comvergence (C) 
   of all models. The brackets and OxCal verbs show the model definition.
-  The 2\(\sigma\), and 3\(\sigma\) confidence intervals are shown for 
-  all distributions. Solid circles indicate the mean (\(\mu\)) of 
+  The 2 $\sigma$, and 3 $\sigma$ confidence intervals are shown for 
+  all distributions. Solid circles indicate the mean $\mu$ of 
   posterior distributions, transparent circles the means of the 
   radiocarbon dates prior to modelling. All years are modelled years BC.
 
@@ -58,37 +58,24 @@ recommendations by Bayliss (2015).
 
 The radiocarbon dates used here stem from several overview works. 
 Chiefly, Bourgeois _et al._ (2025, S1) for CW and Dutch Bell Beaker 
-(BB); Müller (2023, Supplement 9) for GAW, GAC, and GAE; Dreshaj (2022, 
-Appendix B; 2023a, 2023b) and Menne and Brunner (2021, Supplement 1) 
-for Swifterbant (SW); and lastly Vanhanen _et al._ (2019, Supplementary 
-Table 1) and Lindström (2024, Appendix 2) for PW. 
+(BB); Müller (2023, Supplement 9) for GAW, GAC, and GAE; Dreshaj _et al._ 
+(2022, Appendix B; 2023a, 2023b) and Menne and Brunner (2021, 
+Supplement 1) for Swifterbant (SW); and lastly Vanhanen _et al._ (2019, 
+Supplementary Table 1) and Lindström (2024, Appendix 2) for PW. The 
+radiocarbon datesets for Funnel Beaker West (FBW) and Dutch CW are the 
+same from Kroon (2024, Appendix A) and for Vlaardingen (VL) from Kroon 
+(in press.).
 
-A breakdown of the radiocarbon dates by sample material is shown in 
-Suppl. Fig. 1.
-
-![Supplementary Figure 1](overview_table.jpg)
-
-
-
-
-Efforts have been made to made to verify each individual radiocarbon 
-date with the primary sources, and to gather the relevant contextual 
-information (e.g., \(\delta\)13C, \(\delta\)15N). However, these 
-efforts were not always succesfull due to the size of the dataset, 
-language barriers, and missing information. The current overview is 
-therefore best seen as a _status quo_ and (hopefully) as an incentive 
-for further improving the quality of the radiocarbon dataset for this 
-period (cf. Bayliss 2015), and more in-depth Bayesian chronological 
-modelling (e.g, Whittle _et al._ (eds) 2011).
+For a discussion about sample selection, please refer to the main text.
 
 ## Model set-up
 The aim of these models is to investigate whether the available absolute 
 dates support a rapid transition from indigenous societies to Corded 
 Ware (CW) during the 3rd millennium BCE in Europe. To this end, the 
-models are structured as follows (see Suppl. Fig. 2).
+models are structured as follows (see Suppl. Fig. 3).
 
 ```C++
-// Supplementary Figure 2: Example of model structure
+// Supplementary Figure 3: Example of model structure
  Plot()
  {
   // Outlier models
@@ -156,13 +143,40 @@ models are structured as follows (see Suppl. Fig. 2).
 ```
 The available radiocarbon dates for CW and the indigenous group in the
 respective area (e.g., Funnel Beaker West (FBW) in the Dutch uplands) 
-are placed in independent sequences. 
+are placed in a phase in independent sequences. This set-up avoids any 
+assumption about the chronological relations between groups, as would 
+be the case if the radiocarbon dates were treated as phases within a 
+single sequence (Bronk Ramsey 2009a). 
 
-The dates have been calibrated 
-with the R-date() function in OxCal and the IntCal20 calibration curve.
+The dates are calibrated in OxCal v.4.4.4 (Bronk Ramsey 2021) with the 
+R-Date() function and the IntCal20 calibration curve (Reimer et al. 
+2021). Separate outlier models are applied for cremations (Rose _et al._
+2020), charcoal and other dates (Bronk Ramsey 2009b). The odds of an 
+outlier were set to 1 for all radiocarbon dates on charcoal and 
+calcined bone. The odds of an outlier for the remainder of the samples 
+was set to 0.05 and increased as necessary over the course of multiple 
+iterations of the model.
 
-The start and end dates of these 
-groups are then inferred with a trapezium boundary.
+The dataset contains several instances in which multiple radiocarbon 
+dates were performed on the same organism (e.g., an animal deposition 
+at Malice 1, see Witkowska 2021), as well as instances in which 
+multiple radiocarbon dates were performed on different organisms buried 
+in a single event (e.g. the mass burial at Koszyce 3; Włodarczak _et al._ 
+2021). These dates have been incorporated with the R-combine() and 
+Combine() functions, respectively (see Bayliss 2015).
+
+The model summarises the dates in each sequence with the KDE_plot() and 
+Sum() functions (Bronk Ramsey 2017). The start and end dates of each 
+group are then inferred with the trapezium model, since this model is 
+held to be the most appropriate for cultural phenomena (Lee and 
+Bronk Ramsey 2011).
+
+Finally, the model determines whether overlap between the indigenous 
+and migrant groups is likely through the Order() query. The duration of 
+this overlap (or gap) is then calculated with the Difference() query.
+
+## Notes about model outputs
+
 
 ## How to cite
 Please cite the main publication: Kroon, E.J., (in prep.). New Approach 
@@ -173,9 +187,98 @@ of the Prehistoric Society.
 For the radiocarbon dates, please refer to the sources mentioned in 
 `raw_data/radiocarbon_dates.csv`.
 
-Bibliography
-Bronk Ramsey 2021
+## Bibliography
+Bayliss, A., 2015. Quality in Bayesian chronological models in 
+archaeology. _World Archaeology_ 47(4), 677-700. DOI: 
+[10.1080/00438243.2015.1067640](https://doi.org/10.1080/00438243.2015.1067640).
 
+Bourgeois, Q.P.J., Helmecke, F., Olerud, L., Djakovic, I., Guadalupe 
+Castro González, M. & Kroon, E.J. 2025a. Spatiotemporal reconstruction 
+of Corded Ware and Bell Beaker burial ritual reveals complex dynamics 
+divergent from steppe ancestry. _Science Advances_ 11(20), eadx2262. DOI:
+[10.1126/sciadv.adx2262](https://doi.org/10.1126/sciadv.adx2262).
 
+Bronk Ramsey, C., 2009a. Bayesian analysis of radiocarbon dates. 
+_Radiocarbon_ 51(1), 337–60. [10.1017/S0033822200033865](https://doi.org/10.1017/S0033822200033865).
 
-[def]: C:\Users\Erik_\Documents\GitHub\overview_table.jpg
+Bronk Ramsey, C., 2009b. Dealing with outliers and offsets in 
+radiocarbon dating. _Radiocarbon_ 51(3), 1023-45. DOI: 
+[10.1017/S0033822200034093](https://doi.org/10.1017/S0033822200034093).
+
+Bronk Ramsey, C., 2017. Methods for summarizing radiocarbon datasets. 
+_Radiocarbon_ 59(6), 1809-33. DOI: [10.1017/RDC.2017.108](https://doi.org/10.1017/RDC.2017.108).
+
+Bronk Ramsey, C. 2021. _OxCal v4.4.4_.
+
+Dreshaj, M., Dee, M., Peeters, H., and Raemaekers, D., 2022. Blind 
+dates: Exploring uncertainty in the radiocarbon evidence on the 
+emergence of animal husbandry in the Dutch wetlands. _Journal of_ 
+_Archaeological Science: Reports_ 45, 103589. DOI:
+[10.1016/j.jasrep.2022.103589](https://doi.org/10.1016/j.jasrep.2022.103589).
+
+Dreshaj, M., Dee, M., Brusgaard, N., Raemaekers, D., and Peeters, H., 
+2023a. High-resolution Bayesian chronology of the earliest evidence of 
+domesticated animals in the Dutch wetlands (Hardinxveld-Giessendam 
+archaeological sites). _PLOS ONE_ 18(1), e0280619. DOI: 
+[10.1371/journal.pone.0280619](https://doi.org/10.1371/journal.pone.0280619).
+
+Dreshaj, M., Raemaekers, D., and Dee, M., 2023b. Chronological modeling 
+on a calibration plateau: Implications for the emergence of agriculture 
+in the Dutch wetlands. _Radiocarbon_ 65(6), 1280–1298. DOI: 
+[10.1017/RDC.2023.126](https://doi.org/10.1017/RDC.2023.126).
+
+Kroon, E.J., 2024. _Serial Learners: Interactions between Funnel Beaker_ 
+_West and Corded Ware Communities in the Netherlands during the Third_ 
+_Millennium BCE from the Perspective of Ceramic Technology_. Leiden: 
+Sidestone Press. DOI: [10.59641/4e367hq](https://doi.org/10.59641/4e367hq).
+
+Kroon, E.J., in press. Corded Ware was never alone: Ceramic technology 
+and Bayesian chronological modelling demonstrate interactions between 
+migrating and indigenous communities in the Netherlands 5,000 years ago.
+DOI: [10.17026/AR/3SKXTB](https://doi.org/10.17026/AR/3SKXTB).
+
+Lee, S., Bronk Ramsey, C. 2012. Development and application of the 
+trapezoidal model for archaeological chronologies. _Radiocarbon_ 54(1): 
+107-122. DOI: [10.2458/azu_js_rc.v54i1.12397](https://doi.org/10.2458/azu_js_rc.v54i1.12397).
+
+Lindström, T., (2024). _Människor, djur och varelser i miniatyr:_ 
+_Flerartliga förbindelser i den gropkeramiska kulturen_ (PhD 
+dissertation). Stockholm University, Stockholm.
+
+Menne, J. & Brunner, M., 2021. Transition from Swifterbant to 
+Funnelbeaker: A Bayesian Chronological Model. _Open Archaeology_ 7(1), 
+1235–43. DOI: [10.1515/opar-2020-0191](https://doi.org/10.1515/opar-2020-0191).
+
+Müller, J., 2023. _Separation, hybridisation, and networks: Globular_ 
+_Amphora sedentary pastoralists ca. 3200-2700 BCE_. Leiden: Sidestone 
+Press. DOI: [10.59641/a0e4613c](https://doi.org/10.59641/a0e4613c).
+
+Reimer, P.J., Austin, W.E.N., Bard, E., Bayliss, A., Blackwell, P.G., 
+Bronk Ramsey, C., Butzinm M., Cheng, H., Edwards, R.L., Friedrich, M., 
+Grootes, P.M., Guilderson, T.P., Hajdas, I., Heaton, T.J., Hogg, A.G., 
+Hughen, K.A., Kromer, B., Manning, S.W., Muscheler, R., Palmer, J.G., 
+Pearson, C., Van der Plicht, J., Reimer, R.W., Richards, D.A., Scott, 
+E.M., Southon, J.R., Turney, C.S.M., Wacker, L., Adolphi, F., Büntgen, 
+U., Capano, M., Fahrni, S.M., Fogtmann-Schulz, A., Friedrich, R., 
+Köhler, P., Kudsk, S., Miyake, F., Olsen, J., Reinig, F., Sakamoto, M., 
+Sookdeo, A., and Talamo, S., 2020. The IntCal20 northern hemisphere 
+radiocarbon age calibration curve (0–55 cal kBP). _Radiocarbon_ 62(4), 
+725–757. DOI: [10.1017/RDC.2020.41](https://doi.org/10.1017/RDC.2020.41).
+
+Rose, H.A., Meadows, J., and Henriksen M.B., 2020. Bayesian modeling of 
+wood-age offsets in cremated bone. _Radiocarbon_ 62(2), 379-401. DOI: 
+[10.1017/RDC.2020.3](https://doi.org/10.1017/RDC.2020.3).
+
+Vanhanen, S., Gustafsson, S., Ranheden, H., Björck, N., Kemell, M., and 
+Heyd, V., 2019. Maritime hunter-gatherers adopt cultivation at the 
+farming extreme of northern Europe 5000 Years Ago. _Scientific Reports_ 
+9(1), 4756. DOI: [10.1038/s41598-019-41293-z](https://doi.org/10.1038/s41598-019-41293-z).
+
+Witkowska, B., 2021. Radiocarbon dating of the archival funeral 
+complexes of the Globular Amphora culture on the Sandomierz Upland: 
+Gajowizna, Malice, Mierzanowice and Sandomierz sites. _Baltic-Pontic_
+_Studies_ 25, 7–47. DOI: [10.14746/bps.2021.25.1](https://doi.org/10.14746/bps.2021.25.1).
+
+Włodarczak, P., Szczepanek, A., and Przybyła, M.M., 2021. Grave of the 
+Globular Amphora culture from Koszyce in the chronological perspective. 
+_Baltic-Pontic Studies_ 25. DOI: [10.14746/bps.2021.25.6](https://doi.org/10.14746/bps.2021.25.6).
