@@ -19,7 +19,7 @@ __OxCal_models
  |  |_ outliers.csv
  |  |_ output.csv
  |  |_ visual_output.pdf
- |___European chronology -> (Kroon in prep., Fig. 8)
+ |___European chronology -> (Kroon in prep., Fig. 10)
  |   |_GAC_CW
  |   |_GAE_CW
  |   |_GAW_CW
@@ -174,6 +174,19 @@ Bronk Ramsey 2011).
 Finally, the model determines whether overlap between the indigenous 
 and migrant groups is likely through the Order() query. The duration of 
 this overlap (or gap) is then calculated with the Difference() query.
+
+## Notes about Difference() beteen boundaries in main text
+The Bayesian chronological models feature three Difference() queries 
+per boundary.
+- Overlap: the difference between the midpoints of the 
+  trapezoidal boundaries, equivalent to the normal boundaries.
+- Min overlap: the difference between the start of the start boundary 
+  of the youngest phenomenon and the end of the end boundary for the 
+  oldest phenomenon.
+- Max overlap: the difference between the end of the start boundary of 
+  the youngest phenomenon and the start of the end boundary for the oldest phenomenon.
+The naming got a bit confused here as I was going through alternative 
+parameterisations and had to clean up for the main text. But the overlaps referred to in the text are the Min overlaps. These best reflect the nature of the trapezoidal boundaries (cf. Lee and Bronk Ramsey 2012). 
 
 ## Notes about model outputs
 In this section, a number of outliers flagged by OxCal in the Bayesian 
