@@ -175,9 +175,9 @@ Finally, the model determines whether overlap between the indigenous
 and migrant groups is likely through the Order() query. The duration of 
 this overlap (or gap) is then calculated with the Difference() query.
 
-## Notes about Difference() beteen boundaries in main text
+## Notes about overlaps in main text
 The Bayesian chronological models feature three Difference() queries 
-per boundary.
+per boundary which estimate the overlap between archaeological phenomena. In the .txt files, these are:
 - Overlap: the difference between the midpoints of the 
   trapezoidal boundaries, equivalent to the normal boundaries.
 - Min overlap: the difference between the start of the start boundary 
