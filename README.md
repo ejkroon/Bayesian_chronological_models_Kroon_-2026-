@@ -185,6 +185,7 @@ per boundary which estimate the overlap between archaeological phenomena. In the
   oldest phenomenon.
 - Max overlap: the difference between the end of the start boundary of 
   the youngest phenomenon and the start of the end boundary for the oldest phenomenon.
+
 The naming got a bit confused here as I was going through alternative 
 parameterisations and had to clean up for the main text. But the overlaps referred to in the text are the Min overlaps. These best reflect the nature of the trapezoidal boundaries (cf. Lee and Bronk Ramsey 2012). 
 
